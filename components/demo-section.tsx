@@ -3,23 +3,28 @@ import { LeadForm } from "./lead-form";
 
 export function DemoSection() {
   return (
-    <section id="demo" className="py-20 lg:py-32 bg-gradient-to-br from-[#4C5EFF]/10 via-[#10B981]/5 to-[#4C5EFF]/10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <Card className="max-w-4xl mx-auto p-8 md:p-12 text-center shadow-2xl border-2 border-[#4C5EFF]/20">
+    <section id="demo" className="py-20 lg:py-32 relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#4C5EFF]/10 via-[#10B981]/5 to-[#8B5CF6]/10" />
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#4C5EFF]/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#10B981]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <Card className="max-w-4xl mx-auto p-8 md:p-12 text-center shadow-2xl border-2 border-[#4C5EFF]/20 glass-strong glow">
           <div className="space-y-6">
             {/* Icon */}
             <div className="flex justify-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#4C5EFF] to-[#10B981] rounded-2xl flex items-center justify-center text-4xl shadow-lg">
+              <div className="w-24 h-24 bg-gradient-to-br from-[#4C5EFF] to-[#10B981] rounded-3xl flex items-center justify-center text-5xl shadow-2xl glow float">
                 🚀
               </div>
             </div>
 
             {/* Heading */}
-            <div className="space-y-3">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-                Hazır mısınız?
+            <div className="space-y-4">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-foreground">
+                <span className="gradient-text">Hazır mısınız?</span>
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-light">
                 Nu-Agent ile ekibinizin verimliliğini artırın. 14 gün ücretsiz deneyin,
                 kredi kartı gerekmez. Canlı demo için formu doldurun.
               </p>
@@ -49,14 +54,19 @@ export function DemoSection() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <LeadForm
                 trigger={
-                  <button className="px-8 py-3 bg-gradient-to-r from-[#4C5EFF] to-[#10B981] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity duration-200 shadow-lg">
-                    Canlı Demo Talep Et
+                  <button className="px-10 py-4 bg-gradient-to-r from-[#4C5EFF] to-[#10B981] text-white text-lg font-bold rounded-xl hover:shadow-2xl transition-all duration-300 shadow-xl glow-hover group">
+                    <span className="flex items-center gap-2">
+                      Canlı Demo Talep Et
+                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </span>
                   </button>
                 }
               />
               <a
                 href="#pricing"
-                className="px-8 py-3 bg-white border-2 border-border text-foreground font-semibold rounded-lg hover:bg-muted transition-colors duration-200"
+                className="px-10 py-4 glass-strong border-2 border-white/20 text-foreground text-lg font-bold rounded-xl hover:scale-105 transition-all duration-300 inline-block"
               >
                 Fiyatları İncele
               </a>

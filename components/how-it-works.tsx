@@ -50,11 +50,11 @@ export function HowItWorks() {
           {steps.map((step, index) => (
             <Card
               key={index}
-              className="relative p-6 hover:shadow-lg transition-shadow duration-300"
+              className="relative p-6 bento-card"
             >
               {/* Step Number */}
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-[#4C5EFF] to-[#10B981] rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-sm">{step.number}</span>
+              <div className="absolute -top-4 -left-4 w-14 h-14 bg-gradient-to-br from-[#4C5EFF] to-[#10B981] rounded-full flex items-center justify-center shadow-lg glow group-hover:scale-110 transition-transform">
+                <span className="text-white font-bold text-base">{step.number}</span>
               </div>
 
               {/* Icon */}

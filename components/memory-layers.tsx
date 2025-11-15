@@ -46,7 +46,7 @@ export function MemoryLayers() {
           {memoryLayers.map((layer, index) => (
             <Card
               key={index}
-              className="relative overflow-hidden hover:shadow-xl transition-all duration-300 group"
+              className="relative overflow-hidden bento-card group"
             >
               {/* Gradient Background */}
               <div

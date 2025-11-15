@@ -60,7 +60,7 @@ export function Personas() {
           {personas.map((persona, index) => (
             <Card
               key={index}
-              className="relative overflow-hidden hover:shadow-xl transition-all duration-300 group"
+              className="relative overflow-hidden bento-card group"
             >
               {/* Gradient Background */}
               <div
@@ -71,7 +71,7 @@ export function Personas() {
                 {/* Icon */}
                 <div className="mb-4">
                   <div
-                    className={`inline-flex w-16 h-16 items-center justify-center rounded-2xl bg-gradient-to-br ${persona.color} text-3xl`}
+                    className={`inline-flex w-20 h-20 items-center justify-center rounded-2xl bg-gradient-to-br ${persona.color} text-4xl shadow-lg glow group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
                   >
                     {persona.icon}
                   </div>

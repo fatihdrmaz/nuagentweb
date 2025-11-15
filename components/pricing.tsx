@@ -82,27 +82,27 @@ export function Pricing() {
           </p>
 
           {/* Billing Toggle */}
-          <div className="inline-flex items-center space-x-3 bg-white rounded-full p-1 shadow-sm border border-border">
+          <div className="inline-flex items-center space-x-3 glass-strong rounded-full p-1.5 shadow-lg border border-white/20">
             <button
               onClick={() => setIsAnnual(false)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+              className={`px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${
                 !isAnnual
-                  ? "bg-[#4C5EFF] text-white shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "bg-gradient-to-r from-[#4C5EFF] to-[#10B981] text-white shadow-lg glow"
+                  : "text-muted-foreground hover:text-foreground hover:glass"
               }`}
             >
               Aylık
             </button>
             <button
               onClick={() => setIsAnnual(true)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+              className={`px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${
                 isAnnual
-                  ? "bg-[#4C5EFF] text-white shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "bg-gradient-to-r from-[#4C5EFF] to-[#10B981] text-white shadow-lg glow"
+                  : "text-muted-foreground hover:text-foreground hover:glass"
               }`}
             >
               Yıllık
-              <Badge variant="secondary" className="ml-2 text-xs">
+              <Badge variant="secondary" className="text-xs animate-pulse">
                 %20 İndirim
               </Badge>
             </button>
@@ -114,10 +114,10 @@ export function Pricing() {
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative flex flex-col ${
+              className={`relative flex flex-col transition-all duration-300 hover:scale-105 ${
                 plan.popular
-                  ? "border-[#4C5EFF] border-2 shadow-xl scale-105"
-                  : "border-border"
+                  ? "border-[#4C5EFF] border-2 shadow-2xl scale-105 glow"
+                  : "border-border bento-card"
               }`}
             >
               {plan.popular && (

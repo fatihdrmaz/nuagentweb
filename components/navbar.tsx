@@ -27,20 +27,20 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm"
+          ? "glass-strong shadow-lg border-b border-white/10"
           : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-[#4C5EFF] to-[#10B981] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">Nu</span>
+          <Link href="/" className="flex items-center space-x-2 group">
+            <div className="w-10 h-10 bg-gradient-to-br from-[#4C5EFF] to-[#10B981] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+              <span className="text-white font-bold text-base">Nu</span>
             </div>
-            <span className="text-xl font-bold text-foreground">Nu-Agent</span>
+            <span className="text-xl font-bold text-foreground group-hover:gradient-text transition-all">Nu-Agent</span>
           </Link>
 
           {/* Desktop Menu */}
@@ -58,10 +58,10 @@ export function Navbar() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="ghost" asChild>
+            <Button variant="ghost" className="hover:glass" asChild>
               <Link href="#demo">Demo</Link>
             </Button>
-            <Button asChild>
+            <Button className="glow-hover" asChild>
               <Link href="#demo">Canlı Demo Al</Link>
             </Button>
           </div>
