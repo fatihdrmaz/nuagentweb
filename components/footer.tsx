@@ -31,7 +31,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#0B1020] text-white">
+    <footer className="bg-gradient-to-b from-purple-950 to-purple-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">

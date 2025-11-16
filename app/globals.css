@@ -44,39 +44,39 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  /* Nu-Agent Brand Colors - Indigo & Emerald */
-  --background: #F7F8FC;
-  --foreground: #0B1020;
+  --radius: 0.75rem;
+  /* Nu-Agent Brand Colors - Clean Purple on White */
+  --background: #FFFFFF;
+  --foreground: #111827;
   --card: #FFFFFF;
-  --card-foreground: #0B1020;
+  --card-foreground: #111827;
   --popover: #FFFFFF;
-  --popover-foreground: #0B1020;
-  --primary: #4C5EFF; /* Indigo */
+  --popover-foreground: #111827;
+  --primary: #8B5CF6; /* Purple */
   --primary-foreground: #FFFFFF;
-  --secondary: #10B981; /* Emerald */
+  --secondary: #D946EF; /* Fuchsia */
   --secondary-foreground: #FFFFFF;
-  --muted: #E5E7EB;
-  --muted-foreground: #5B6270;
-  --accent: #10B981;
+  --muted: #F9FAFB;
+  --muted-foreground: #6B7280;
+  --accent: #C026D3;
   --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
   --border: #E5E7EB;
-  --input: #E5E7EB;
-  --ring: #4C5EFF;
-  --chart-1: #4C5EFF;
-  --chart-2: #10B981;
-  --chart-3: #8B5CF6;
-  --chart-4: #F59E0B;
-  --chart-5: #EF4444;
+  --input: #F9FAFB;
+  --ring: #8B5CF6;
+  --chart-1: #8B5CF6;
+  --chart-2: #D946EF;
+  --chart-3: #C026D3;
+  --chart-4: #A855F7;
+  --chart-5: #7C3AED;
   --sidebar: #FFFFFF;
-  --sidebar-foreground: #0B1020;
-  --sidebar-primary: #4C5EFF;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #8B5CF6;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #F7F8FC;
-  --sidebar-accent-foreground: #0B1020;
+  --sidebar-accent: #F9FAFB;
+  --sidebar-accent-foreground: #111827;
   --sidebar-border: #E5E7EB;
-  --sidebar-ring: #4C5EFF;
+  --sidebar-ring: #8B5CF6;
 }
 
 .dark {
@@ -135,23 +135,26 @@
       linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   }
   
-  /* Glassmorphism */
+  /* Glassmorphism - Minimal */
   .glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
   
   .glass-strong {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(229, 231, 235, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
   
   /* Gradient Text */
   .gradient-text {
-    background: linear-gradient(135deg, #4C5EFF 0%, #10B981 100%);
+    background: linear-gradient(135deg, #8B5CF6 0%, #D946EF 50%, #C026D3 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -159,9 +162,14 @@
   
   /* Animated Gradient Background */
   .animated-gradient {
-    background: linear-gradient(-45deg, #4C5EFF, #10B981, #8B5CF6, #F59E0B);
+    background: linear-gradient(-45deg, #8B5CF6, #D946EF, #C026D3, #A855F7);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+  }
+  
+  /* Purple Glow - Subtle */
+  .purple-glow {
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
   }
   
   @keyframes gradient {
@@ -170,17 +178,14 @@
     100% { background-position: 0% 50%; }
   }
   
-  /* Glow Effect */
+  /* Glow Effect - Clean */
   .glow {
-    box-shadow: 0 0 20px rgba(76, 94, 255, 0.3),
-                0 0 40px rgba(76, 94, 255, 0.2),
-                0 0 60px rgba(76, 94, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
   }
   
   .glow-hover:hover {
-    box-shadow: 0 0 30px rgba(76, 94, 255, 0.5),
-                0 0 60px rgba(76, 94, 255, 0.3),
-                0 0 90px rgba(76, 94, 255, 0.2);
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+    transform: translateY(-2px);
   }
   
   /* Floating Animation */
@@ -193,16 +198,112 @@
     50% { transform: translateY(-20px); }
   }
   
-  /* Bento Card */
+  /* Bento Card - Clean */
   .bento-card {
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.18);
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .bento-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(76, 94, 255, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(139, 92, 246, 0.12);
+    border-color: #8B5CF6;
+  }
+  
+  /* Neon Border */
+  .neon-border {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--background), var(--background)) padding-box,
+                linear-gradient(135deg, #8B5CF6, #D946EF, #C026D3) border-box;
+  }
+  
+  /* Mesh Gradient Background */
+  .mesh-gradient {
+    background: 
+      linear-gradient(180deg, #FFFFFF 0%, #FAF8FF 100%),
+      radial-gradient(at 40% 20%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(217, 70, 239, 0.06) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(192, 38, 211, 0.05) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, rgba(168, 85, 247, 0.04) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(124, 58, 237, 0.06) 0px, transparent 50%),
+      radial-gradient(at 80% 100%, rgba(139, 92, 246, 0.07) 0px, transparent 50%);
+  }
+  
+  /* Animations */
+  @keyframes slide-in-from-top {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slide-in-from-bottom {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .animate-in {
+    animation-fill-mode: both;
+  }
+  
+  .slide-in-from-top {
+    animation-name: slide-in-from-top;
+  }
+  
+  .slide-in-from-bottom {
+    animation-name: slide-in-from-bottom;
+  }
+  
+  .fade-in {
+    animation-name: fade-in;
+  }
+  
+  .duration-700 {
+    animation-duration: 700ms;
+  }
+  
+  .duration-1000 {
+    animation-duration: 1000ms;
+  }
+  
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+  
+  .delay-700 {
+    animation-delay: 700ms;
+  }
+  
+  .delay-1000 {
+    animation-delay: 1000ms;
+  }
+  
+  .delay-\[4500ms\] {
+    animation-delay: 4500ms;
   }
 }

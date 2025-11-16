@@ -1,35 +1,36 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { User, Building2, Users2 } from "lucide-react";
 
 const memoryLayers = [
   {
-    icon: "👤",
+    icon: User,
     title: "Personal Memory",
     subtitle: "Bireysel İlişkiler",
     description:
       "Her kullanıcı ile olan konuşma geçmişini, tercihlerini ve çalışma tarzını hatırlar. Kişiselleştirilmiş yanıtlar sunar.",
-    gradient: "from-blue-500 to-indigo-600",
+    gradient: "from-purple-500 to-violet-600",
   },
   {
-    icon: "🏢",
+    icon: Building2,
     title: "Organizational Memory",
     subtitle: "Kurumsal Bilgi",
     description:
       "KnowledgeNode ve RAG sistemi ile dokümanları, prosedürleri ve şirket bilgisini sürekli günceller ve erişilebilir tutar.",
-    gradient: "from-[#4C5EFF] to-[#10B981]",
+    gradient: "from-fuchsia-500 to-pink-600",
   },
   {
-    icon: "🤝",
+    icon: Users2,
     title: "Social Memory",
     subtitle: "People-Facts",
     description:
       "Kim neyin sahibi, hangi ekip ne ile ilgileniyor, kimin uzmanlığı ne gibi sosyal bağlantıları ve ilişkileri öğrenir.",
-    gradient: "from-emerald-500 to-teal-600",
+    gradient: "from-violet-500 to-purple-600",
   },
 ];
 
 export function MemoryLayers() {
   return (
-    <section id="features" className="py-20 lg:py-32 bg-muted/30">
+    <section id="features" className="py-20 lg:py-32 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
@@ -57,15 +58,15 @@ export function MemoryLayers() {
                 {/* Icon */}
                 <div className="mb-4">
                   <div
-                    className={`inline-flex w-16 h-16 items-center justify-center rounded-2xl bg-gradient-to-br ${layer.gradient} text-3xl`}
+                    className={`inline-flex w-20 h-20 items-center justify-center rounded-2xl bg-gradient-to-br ${layer.gradient} shadow-lg purple-glow`}
                   >
-                    {layer.icon}
+                    <layer.icon className="w-10 h-10 text-white" />
                   </div>
                 </div>
 
                 {/* Title & Subtitle */}
                 <CardTitle className="text-2xl mb-1">{layer.title}</CardTitle>
-                <CardDescription className="text-sm font-medium text-[#4C5EFF] mb-3">
+                <CardDescription className="text-sm font-medium text-purple-400 mb-3">
                   {layer.subtitle}
                 </CardDescription>
 

@@ -25,11 +25,20 @@ export function Navbar() {
     { label: "Kaynaklar", href: "#faq" },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "glass-strong shadow-lg border-b border-white/10"
+          ? "glass-strong shadow-lg border-b border-purple-100 backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
@@ -37,7 +46,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#4C5EFF] to-[#10B981] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-fuchsia-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 purple-glow">
               <span className="text-white font-bold text-base">Nu</span>
             </div>
             <span className="text-xl font-bold text-foreground group-hover:gradient-text transition-all">Nu-Agent</span>
@@ -46,29 +55,30 @@ export function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-8">
             {menuItems.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                onClick={(e) => handleNavClick(e, item.href)}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground hover:scale-105 transition-all duration-200 cursor-pointer"
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="ghost" className="hover:glass" asChild>
+            <Button variant="ghost" className="hover:bg-purple-50 hover:scale-105 transition-all" asChild>
               <Link href="#demo">Demo</Link>
             </Button>
-            <Button className="glow-hover" asChild>
+            <Button className="glow-hover bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 hover:scale-105 transition-all" asChild>
               <Link href="#demo">Canlı Demo Al</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-md hover:bg-muted"
+            className="lg:hidden p-2 rounded-md hover:bg-purple-50 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Menüyü aç"
           >
@@ -99,24 +109,26 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 space-y-2 border-t bg-white">
-            {menuItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="px-4 pt-4 space-y-2">
-              <Button variant="ghost" className="w-full" asChild>
-                <Link href="#demo">Demo</Link>
-              </Button>
-              <Button className="w-full" asChild>
-                <Link href="#demo">Canlı Demo Al</Link>
-              </Button>
+          <div className="lg:hidden pb-4 animate-in fade-in slide-in-from-top duration-300">
+            <div className="flex flex-col space-y-2">
+              {menuItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-purple-50 rounded-lg transition-colors cursor-pointer"
+                >
+                  {item.label}
+                </a>
+              ))}
+              <div className="pt-4 px-4 flex flex-col gap-2">
+                <Button variant="ghost" className="w-full" asChild>
+                  <Link href="#demo">Demo</Link>
+                </Button>
+                <Button className="w-full bg-gradient-to-r from-purple-600 to-fuchsia-600" asChild>
+                  <Link href="#demo">Canlı Demo Al</Link>
+                </Button>
+              </div>
             </div>
           </div>
         )}
@@ -124,4 +136,3 @@ export function Navbar() {
     </nav>
   );
 }
-

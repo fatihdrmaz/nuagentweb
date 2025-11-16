@@ -5,6 +5,7 @@ import { MemoryLayers } from "@/components/memory-layers";
 import { SlackPipeline } from "@/components/slack-pipeline";
 import { RagArchitecture } from "@/components/rag-architecture";
 import { Personas } from "@/components/personas";
+import { InteractiveDemo } from "@/components/interactive-demo";
 import { Security } from "@/components/security";
 import { UseCases } from "@/components/use-cases";
 import { Pricing } from "@/components/pricing";
@@ -127,10 +128,11 @@ export default function Home() {
         <Hero />
         <HowItWorks />
         <MemoryLayers />
-        <SlackPipeline />
-        <RagArchitecture />
-        <Personas />
-        <Security />
+      <SlackPipeline />
+      <RagArchitecture />
+      <Personas />
+      <InteractiveDemo />
+      <Security />
         <UseCases />
         <Pricing />
         <FAQ />

@@ -75,7 +75,7 @@ export function UseCases() {
   const [activeTab, setActiveTab] = useState("support");
 
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-20 lg:py-32 bg-gradient-to-b from-purple-50/20 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">

@@ -1,9 +1,10 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Code2, DollarSign, Settings, Users } from "lucide-react";
 
 const personas = [
   {
-    icon: "💻",
+    icon: Code2,
     name: "Tech Support",
     tagline: "Teknik Uzman AI",
     description:
@@ -12,7 +13,7 @@ const personas = [
     color: "from-blue-500 to-indigo-600",
   },
   {
-    icon: "💰",
+    icon: DollarSign,
     name: "Finance Assistant",
     tagline: "Finans Analisti AI",
     description:
@@ -21,7 +22,7 @@ const personas = [
     color: "from-emerald-500 to-teal-600",
   },
   {
-    icon: "⚙️",
+    icon: Settings,
     name: "Operations Manager",
     tagline: "Operasyon Yöneticisi AI",
     description:
@@ -30,7 +31,7 @@ const personas = [
     color: "from-purple-500 to-pink-600",
   },
   {
-    icon: "👥",
+    icon: Users,
     name: "HR Specialist",
     tagline: "İnsan Kaynakları AI",
     description:
@@ -42,7 +43,7 @@ const personas = [
 
 export function Personas() {
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-20 lg:py-32 bg-gradient-to-b from-white to-purple-50/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
@@ -71,9 +72,9 @@ export function Personas() {
                 {/* Icon */}
                 <div className="mb-4">
                   <div
-                    className={`inline-flex w-20 h-20 items-center justify-center rounded-2xl bg-gradient-to-br ${persona.color} text-4xl shadow-lg glow group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
+                    className={`inline-flex w-20 h-20 items-center justify-center rounded-2xl bg-gradient-to-br ${persona.color} shadow-lg glow group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
                   >
-                    {persona.icon}
+                    <persona.icon className="w-10 h-10 text-white" />
                   </div>
                 </div>
 
